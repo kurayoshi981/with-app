@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_18_065123) do
+ActiveRecord::Schema.define(version: 2019_05_19_022527) do
+
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", limit: 100, null: false
+    t.text "profile", null: false
+    t.integer "birthday", null: false
+    t.integer "age", null: false
+    t.integer "sex", null: false
+    t.string "job_type", null: false
+    t.string "work_location", null: false
+    t.string "skill", null: false
+    t.string "employment_status", null: false
+    t.integer "salary", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,4 +42,5 @@ ActiveRecord::Schema.define(version: 2019_05_18_065123) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "posts", "users"
 end
