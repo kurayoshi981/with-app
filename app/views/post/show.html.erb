@@ -1,0 +1,29 @@
+<div class="container">    
+        <div class="card md-6">
+            <div class="card-header d-flex bd-highlight mb-3 ">
+                <div class="mr-auto p-2 bd-highlight">詳細情報</div>
+                <%= link_to "編集", edit_post_path(@post), class: "btn btn-warning" %>
+            </div>
+            <div class="card-body">
+                <div class="card-body_info">
+                    <h4>詳細</h4>
+                    <ul>
+                        <li>名前: <%= @post.name %></li>
+                        <li>年齡: <%= @post.age %>歳</li>
+                        <li>生年月日: <%= @post.birthday %></li>
+                        <li>性別: <%= @post.sex %></li>
+                    </ul>
+                    <h4>スキル</h4>
+                    <ul>
+                        <li>職種: <%= @post.job_type %></li>
+                        <li>勤務地: <%= @post.work_location %>歳</li>
+                        <li>スキル: <%= @post.skill %></li>
+                        <li>業務: <%= @post.employment_status %></li>
+                        <li>希望年収: <%= @post.salary %>万円</li>
+                    </ul>
+                    <h4>自己PR</h4>
+                    <p><%= @post.profile %></p>
+                </div>
+            </div>
+        </div>
+</div>

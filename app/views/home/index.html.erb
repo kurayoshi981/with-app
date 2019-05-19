@@ -10,6 +10,7 @@
                         <div class="p-2 flex-fill bd-highlight">氏名:<%= post.name %></div>
                         <div class="p-2 flex-fill bd-highlight">年齡:<%= post.age %></div>
                         <div class="p-2 flex-fill bd-highlight">スキル:<%= post.skill %></div>
+                        <%= link_to "詳細", post_path(post), class:"btn btn-info" %>
                         <%= link_to "編集", edit_post_path(post), class: "btn btn-warning" %>
                     </div>
                 </div>
