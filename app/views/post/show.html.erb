@@ -3,6 +3,7 @@
             <div class="card-header d-flex bd-highlight mb-3 ">
                 <div class="mr-auto p-2 bd-highlight">詳細情報</div>
                 <%= link_to "編集", edit_post_path(@post), class: "btn btn-warning" %>
+                <%= link_to "削除", @post, class: "btn btn-danger", method: :delete, data: { confirm: "削除しますか？"} %>
             </div>
             <div class="card-body">
                 <div class="card-body_info">
