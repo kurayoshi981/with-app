@@ -1,0 +1,66 @@
+<div class="container">    
+    <%= form_with model: @post, url: { action: :update } do |f| %>
+        <div class="card card-signin my-5">
+            <div class="card-header">
+                個人情報
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <%= f.label :名前 %>
+                    <%= f.text_field :name, autofocus: true , class: "form-control", placeholder: "ex) taro" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :自己PR %>
+                    <%= f.text_area :profile,rows: 5, autofocus: true , class: "form-control", placeholder: "内容を入力してください" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :誕生日 %>
+                    <br>
+                    <%= f.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true %>
+                </div>
+                <div class="form-group ">
+                    <%= f.label :年齢 %>
+                    <%= f.text_field :age, autofocus: true , class: "form-control form-control-lg" %>
+                </div>
+                <div class="form-gorup">
+                    <%= f.label :性別 %>
+                    <br>
+                    <label>
+                    <%= f.radio_button :sex, 1 %> 男性 </label>
+                    <label>
+                    <%= f.radio_button :sex, 2 %> 女性</label>
+                </div>
+            </div>
+        </div>
+        <div class="card card-signin my-5">
+            <div class="card-header">
+                スキル系
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <%= f.label :職種 %>
+                    <%= f.text_field :job_type, autofocus: true , class: "form-control", placeholder: "ex) フロントエンド、サーバーサイド、インフラ" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :勤務地 %>
+                    <%= f.text_field :work_location, autofocus: true , class: "form-control", placeholder: "ex) 東京" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :スキル %>
+                    <%= f.text_field :skill, autofocus: true , class: "form-control", placeholder: "ex) Ruby" %>
+                </div>            
+                <div class="form-group">
+                    <%= f.label :業務 %>
+                    <%= f.text_field :employment_status, autofocus: true , class: "form-control", placeholder: "ex) 自社開発、受託開発、SES、SIer" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :年収 %>
+                    <%= f.text_field :salary, autofocus: true , class: "form-control form-control-lg" %>
+                </div>
+            </div>
+            <div class="text-center">
+                <%= f.submit "送信", class: "btn btn-primary" %>
+            </div>
+        </div>
+    <% end %>
+</div>

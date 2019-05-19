@@ -13,6 +13,19 @@ class PostController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      redirect_to :root
+    else
+      @post.valid?
+      render action: :edit
+    end
+  end
 
   private
   def post_params
