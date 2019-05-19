@@ -1,4 +1,5 @@
 class PostController < ApplicationController
+  before_action :set_post, only: %i(edit update)
   def new
     @post = Post.new
   end
@@ -14,11 +15,9 @@ class PostController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       redirect_to :root
     else
@@ -41,5 +40,9 @@ class PostController < ApplicationController
       :employment_status,
       :salary
       ).merge(user: current_user)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end
