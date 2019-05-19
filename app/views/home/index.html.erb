@@ -1,1 +1,19 @@
-<h1>トップ画面</h1>
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-12">
+            <h1>トップ画面</h1>
+            <div class="main-header">
+            </div>
+            <% @posts.each do |post| %>
+                <div class="card main-content">
+                    <div class="d-flex bd-highlight">
+                        <div class="p-2 flex-fill bd-highlight">氏名:<%= post.name %></div>
+                        <div class="p-2 flex-fill bd-highlight">年齡:<%= post.age %></div>
+                        <div class="p-2 flex-fill bd-highlight">スキル:<%= post.skill %></div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
