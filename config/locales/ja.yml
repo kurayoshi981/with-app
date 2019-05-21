@@ -2,8 +2,8 @@ ja:
   activerecord:
     attributes:
       user:
-        name: 'お名前'
-        nickname: 'お名前'
+        name: お名前
+        nickname: お名前
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -27,8 +27,21 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      post:
+        name: 名前
+        profile: 自己PR
+        birthday: 誕生日
+        age: 年齡
+        sex: 性別
+        job_type: 職種
+        work_location: 勤務地
+        skill: スキル
+        employment_status: 業務形態
+        salary: 年収
     models:
       user: ユーザ
+      post: 情報
+      
   devise:
     confirmations:
       confirmed: アカウントを登録しました。
