@@ -1,5 +1,5 @@
 <div class="container">
-<%= form_with model: @post, local: true, url: { action: :create } do |f| %>
+<%= form_for  @post,  url: { action: :create } do |f| %>
     <div class="card card-signin my-5">
         <div class="card-header">
             個人情報
