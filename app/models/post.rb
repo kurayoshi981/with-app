@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   validates :profile, presence: true,
     length: { maximum: 1000, allow_blank: true}
 
-  validates :birthday, presence: true
+  # validates :birthday, presence: true
 
   validates :age, presence: true,
     numericality: {
