@@ -36,4 +36,7 @@ class Post < ApplicationRecord
       greater_than: 1,
       less_than: 9999,
       allow_blank: true}
+  # validates :image, presence: true
+
+  # mount_uploader :image, ImageUploader
 end

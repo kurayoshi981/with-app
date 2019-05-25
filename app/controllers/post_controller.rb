@@ -7,7 +7,7 @@ class PostController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to :root
+      redirect_to :root, notice: 'メッセージの送信に成功しました'
     else
       @post.valid?
       render action: :new
@@ -46,7 +46,8 @@ class PostController < ApplicationController
       :work_location,
       :skill,
       :employment_status,
-      :salary
+      :salary,
+      :image
       ).merge(user: current_user)
   end
 

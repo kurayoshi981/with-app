@@ -8,6 +8,9 @@
             <div class="card-body">
                 <div class="card-body_info">
                     <h4>詳細</h4>
+                    <% if @post.image? %>
+                        <%= image_tag @post.image.url %>
+                    <% end %>
                     <ul>
                         <li>名前: <%= @post.name %></li>
                         <li>年齡: <%= @post.age %>歳</li>
